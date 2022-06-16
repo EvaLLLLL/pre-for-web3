@@ -1,5 +1,6 @@
 import React from 'react'
 import Web3 from 'web3'
+import styles from './index.module.scss'
 
 function App() {
   React.useEffect(() => {
@@ -26,7 +27,9 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={sendEther}>发起交易</button>
+      <button onClick={sendEther} className={styles.button}>
+        发起交易
+      </button>
     </div>
   )
 }
