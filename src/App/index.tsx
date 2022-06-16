@@ -1,6 +1,5 @@
 import React from 'react'
 import Web3 from 'web3'
-import './App.css'
 
 function App() {
   React.useEffect(() => {
