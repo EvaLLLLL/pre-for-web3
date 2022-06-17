@@ -1,6 +1,7 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Web3 from 'web3'
-import styles from './index.module.scss'
+import { DashBoard, Home, Transaction } from '../features'
 
 function App() {
   React.useEffect(() => {
@@ -26,11 +27,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <button onClick={sendEther} className={styles.button}>
-        发起交易
-      </button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="transaction" element={<Transaction />} />
+      <Route path="dashboard" element={<DashBoard />} />
+    </Routes>
   )
 }
 
