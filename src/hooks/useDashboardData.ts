@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchData } from '../utils/fetchData'
+import { getFormattedData } from '../utils/getFormattedData'
 import { ItemData } from '../types/data'
 
 export const useDashboardData = () => {
@@ -7,7 +7,7 @@ export const useDashboardData = () => {
   const [data, setData] = React.useState<ItemData[]>()
 
   if (loading) {
-    fetchData()
+    getFormattedData()
       .then(data => {
         setData(data)
       })

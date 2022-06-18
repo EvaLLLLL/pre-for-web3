@@ -2,7 +2,7 @@ import { ItemData } from '../types/data'
 import { formatDate } from '../views/formatDate'
 import { source } from '../views/source'
 
-export const fetchData = (): Promise<ItemData[]> => {
+export const getFormattedData = (): Promise<ItemData[]> => {
   const formattedData = source.map(
     ({
       id,

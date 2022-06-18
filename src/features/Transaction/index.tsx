@@ -1,23 +1,14 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { transEther } from '../../utils/transEther'
+import { useTransEther } from '../../hooks/useTransEther'
 
 export const Transaction: React.FC = () => {
-  React.useEffect(() => {
-    if (!window.ethereum) {
-      alert('Please install & enable MetaMask!')
-    }
-
-    window.ethereum?.enable()
-  }, [])
-
+  const transEther = useTransEther()
   const [loading, setLoading] = React.useState(false)
   const [formValue, setFormValue] = React.useState({
     addresses: '',
     token: '',
   })
-
-  const clearForm = () => setFormValue({ addresses: '', token: '' })
 
   return (
     <div className={styles.container}>
@@ -36,7 +27,7 @@ export const Transaction: React.FC = () => {
               event.preventDefault()
               setLoading(true)
               await transEther(formValue)
-              clearForm()
+              setFormValue({ addresses: '', token: '' })
               setLoading(false)
             }}
           >
