@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.transfer {
+  margin-top: 48px;
+}
+
+.form {
+  margin-top: 24px;
+}
+
+.item {
+  margin: 16px 0;
+}
+
+.submit {
+  margin-top: 24px;
+}
+
+.button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.input {
+  min-width: 300px;
+  padding: 10px 20px;
+}

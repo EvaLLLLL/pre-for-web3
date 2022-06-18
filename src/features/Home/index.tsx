@@ -6,10 +6,14 @@ export const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <button className={styles.linkButton}>
-        <Link to="transaction" className={styles.link}>transaction</Link>
+        <Link to="transaction" className={styles.link}>
+          transaction
+        </Link>
       </button>
       <button className={styles.linkButton}>
-        <Link to="dashboard" className={styles.link}>dashboard UI</Link>
+        <Link to="dashboard" className={styles.link}>
+          dashboard UI
+        </Link>
       </button>
     </div>
   )
