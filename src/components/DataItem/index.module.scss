@@ -3,18 +3,28 @@
   font-weight: 500;
 }
 
+.normalbg {
+  background: url('../../assets/itembg.svg');
+  background-size: auto;
+}
+
+.hlbg {
+  background: url('../../assets/itembghl.svg');
+  background-size: auto;
+}
+
 .container {
+  box-sizing: border-box;
   width: 290px;
   height: 138px;
-  background: linear-gradient(
-    278.16deg,
-    rgba(255, 42, 109, 0.1) 0.94%,
-    rgba(160, 126, 255, 0.1) 51.22%,
-    rgba(61, 255, 255, 0.1) 98.25%
-  );
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    background: url('../../assets/itembghl.svg');
+    background-size: auto;
+  }
 
   .header {
     display: flex;
@@ -29,15 +39,10 @@
     }
 
     .coinstatus {
-      color: #fff;
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 21px;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(60deg, transparent 18px, #221334 0);
     }
   }
 
