@@ -1,29 +1,35 @@
 import Web3 from 'web3'
 
 export const transEther = async ({
-  address,
+  addresses,
   token,
 }: {
-  address: string
+  addresses: string
   token: string
 }) => {
-  if (!window.web3?.currentProvider) {
-    alert('Please install MetaMask!')
+  const provider = !window.web3?.currentProvider
+    ? new Web3.providers.HttpProvider('https://eth-testnet.tokenlon.im')
+    : window.web3.currentProvider
+
+  const web3 = new Web3(provider)
+  const [account] = await web3.eth.getAccounts()
+
+  if (!account) {
+    alert("Can't get your account, Please Login to MetaMask!")
     return
   }
 
-  const web3 = new Web3(window.web3.currentProvider)
-  const [account] = await web3.eth.getAccounts()
-
-  let transaction
   try {
-    transaction = await web3.eth.sendTransaction({
-      from: account,
-      to: address,
-      value: token,
-    })
-
-    return transaction
+    const receipts = await Promise.all(
+      addresses.split(',').map(address =>
+        web3.eth.sendTransaction({
+          from: account,
+          to: address,
+          value: token,
+        }),
+      ),
+    )
+    alert('the transaction is completed.\ntrans: \n' + receipts)
   } catch (err: any) {
     alert(err?.message)
   }
