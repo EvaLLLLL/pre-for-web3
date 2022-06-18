@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { transEther } from './utils/transEther'
+import { transEther } from '../../utils/transEther'
 
 export const Transaction: React.FC = () => {
   React.useEffect(() => {
