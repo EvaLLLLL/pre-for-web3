@@ -1,14 +1,13 @@
 export enum StatusEnum {
-  Active = 'active',
-  Terminated = 'terminated',
-  Suspended = 'suspended',
+  Active = 1,
+  Terminated = 2,
+  Suspended = 3,
 }
 
 export type ItemData = {
   id: number
+  subscriptionId: number
   coinName: string
-  coinLogo?: string
   status: StatusEnum
-  coinPrice: string
   expiryTime: string
 }

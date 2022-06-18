@@ -57,6 +57,34 @@
     border-top-right-radius: 10px;
     overflow: hidden;
 
+    .coinlogo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .coinlogoLoading {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(
+        278.16deg,
+        rgba(255, 42, 109, 0.1) 0.94%,
+        rgba(160, 126, 255, 0.1) 51.22%,
+        rgba(61, 255, 255, 0.1) 98.25%
+      );
+      animation: coinlogoLoading 1.4s ease infinite;
+    }
+
+    @keyframes coinlogoLoading {
+      0% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0 50%;
+      }
+    }
+
     .coindata {
       display: flex;
       flex-direction: column;
@@ -70,6 +98,27 @@
       .coninexpires {
         font-size: 13px;
         white-space: nowrap;
+      }
+    }
+
+    .coinPriceLoading {
+      width: 140px;
+      height: 25px;
+      background: linear-gradient(
+        278.16deg,
+        rgba(255, 42, 109, 0.1) 0.94%,
+        rgba(160, 126, 255, 0.1) 51.22%,
+        rgba(61, 255, 255, 0.1) 98.25%
+      );
+      animation: coinlogoLoading 1.4s ease infinite;
+    }
+
+    @keyframes coinPriceLoading {
+      0% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0 50%;
       }
     }
   }

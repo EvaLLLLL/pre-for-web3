@@ -1,7 +1,7 @@
 import React from 'react'
 import { StatusEnum } from '../../types/data'
 import styles from './index.module.scss'
-import { statusToColor, statusToLabel } from '../../utils/status'
+import { statusToColor, statusToLabel } from '../../views/status'
 
 export const StatusIcon: React.FC<{ status: StatusEnum }> = ({ status }) => {
   return (

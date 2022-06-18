@@ -6,11 +6,13 @@ export const useDashboardData = () => {
   const [loading, setLoading] = React.useState(true)
   const [data, setData] = React.useState<ItemData[]>()
 
-  fetchData()
-    .then(data => {
-      setData(data)
-    })
-    .finally(() => setLoading(false))
+  if (loading) {
+    fetchData()
+      .then(data => {
+        setData(data)
+      })
+      .finally(() => setLoading(false))
+  }
 
   return { data, loading }
 }

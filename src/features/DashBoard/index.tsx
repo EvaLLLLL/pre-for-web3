@@ -28,7 +28,7 @@ export const DashBoard: React.FC = () => {
             {data?.map(item => (
               <DataItem
                 {...item}
-                key={item.coinName}
+                key={item.id}
                 selected={item.id === selectedItemId}
                 onClick={() => setSelectedItemId(item.id)}
               />
